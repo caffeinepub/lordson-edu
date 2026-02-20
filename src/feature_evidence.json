@@ -1,0 +1,118 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-build-frontend-student-management-interface-with-a-list-view-of-all-students-showing-name-id-grade-level-and-status-with-ability-to-add-new-students-via-a-form",
+      "featureTitle": "Build frontend student management interface with a list view of all students showing name, ID, grade level, and status, with ability to add new students via a form",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/AddStudentDialog.tsx",
+        "frontend/src/components/StudentList.tsx",
+        "frontend/src/pages/StudentsPage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-7"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-frontend-course-management-interface-with-a-list-view-of-all-courses-showing-course-name-code-credits-and-professor-with-ability-to-add-new-courses-via-a-form",
+      "featureTitle": "Build frontend course management interface with a list view of all courses showing course name, code, credits, and professor, with ability to add new courses via a form",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/AddCourseDialog.tsx",
+        "frontend/src/components/CourseList.tsx",
+        "frontend/src/pages/CoursesPage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-8"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-frontend-student-detail-view-that-shows-full-student-information-and-lists-all-courses-the-student-is-enrolled-in-with-current-grades",
+      "featureTitle": "Build frontend student detail view that shows full student information and lists all courses the student is enrolled in with current grades",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/StudentDetailView.tsx",
+        "frontend/src/components/StudentList.tsx",
+        "frontend/src/pages/StudentDetailPage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-9"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-frontend-enrollment-interface-to-assign-students-to-courses-from-either-student-detail-view-or-course-detail-view",
+      "featureTitle": "Build frontend enrollment interface to assign students to courses from either student detail view or course detail view",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/CourseList.tsx",
+        "frontend/src/components/EnrollStudentDialog.tsx",
+        "frontend/src/components/StudentDetailView.tsx",
+        "frontend/src/pages/CourseDetailPage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-10"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-create-a-creative-cohesive-visual-design-theme-for-the-education-platform-with-professional-styling-appropriate-for-school-administrators-and-educators-using-warm-trustworthy-colors-and-clear-typography-that-ensures-readability-across-dashboards-and-forms",
+      "featureTitle": "Create a creative, cohesive visual design theme for the education platform with professional styling appropriate for school administrators and educators, using warm, trustworthy colors and clear typography that ensures readability across dashboards and forms",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/Layout.tsx",
+        "frontend/src/components/LoginButton.tsx",
+        "frontend/src/components/ProfileSetupDialog.tsx",
+        "frontend/src/index.css",
+        "frontend/tailwind.config.js"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-11"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

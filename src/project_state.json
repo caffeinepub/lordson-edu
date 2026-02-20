@@ -1,0 +1,139 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 3,
+  "summary": "Multi-tenant education management platform 'LORDSON Edu' for schools with role-based dashboards (administrators, directors, professors, students), student profiles with academic records and financial tracking, course management with assignments and grades, staff directories, and multi-language support (English, French, Haitian Creole). Starting with simplified version focusing on student profiles and course management.",
+  "architectural_notes": [
+    "Multi-tenant architecture supporting multiple schools",
+    "Uses Internet Identity authentication (not custom username/password)",
+    "Web application only (no mobile apps for App Store/Google Play)",
+    "No real-time messaging features"
+  ],
+  "known_issues": [],
+  "isFixRequest": false,
+  "imageRequirements": "## Required Images\n- Modern education platform hero banner showing diverse students collaborating (hero-banner.dim_1200x400.png)\n- Simple graduation cap icon for student profiles (graduation-cap.dim_64x64.png)\n- Open book icon for course management (book-icon.dim_64x64.png)",
+  "existing_features": [
+    {
+      "id": "feature-build-frontend-student-management-interface-with-a-list-view-of-all-students-showing-name-id-grade-level-and-status-with-ability-to-add-new-students-via-a-form",
+      "title": "Build frontend student management interface with a list view of all students showing name, ID, grade level, and status, with ability to add new students via a form",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-frontend-course-management-interface-with-a-list-view-of-all-courses-showing-course-name-code-credits-and-professor-with-ability-to-add-new-courses-via-a-form",
+      "title": "Build frontend course management interface with a list view of all courses showing course name, code, credits, and professor, with ability to add new courses via a form",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-frontend-student-detail-view-that-shows-full-student-information-and-lists-all-courses-the-student-is-enrolled-in-with-current-grades",
+      "title": "Build frontend student detail view that shows full student information and lists all courses the student is enrolled in with current grades",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-frontend-enrollment-interface-to-assign-students-to-courses-from-either-student-detail-view-or-course-detail-view",
+      "title": "Build frontend enrollment interface to assign students to courses from either student detail view or course detail view",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-creative-cohesive-visual-design-theme-for-the-education-platform-with-professional-styling-appropriate-for-school-administrators-and-educators-using-warm-trustworthy-colors-and-clear-typography-that-ensures-readability-across-dashboards-and-forms",
+      "title": "Create a creative, cohesive visual design theme for the education platform with professional styling appropriate for school administrators and educators, using warm, trustworthy colors and clear typography that ensures readability across dashboards and forms",
+      "reqIds": [
+        "REQ-11"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Student profiles with academic records and financial tracking",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Course management with assignments and grades",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Role-based dashboards for different user types",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Staff directories",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Multi-language support (English, French, Haitian Creole)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-6",
+      "summary": "Create student profile data structure in backend to store student ID, full name, date of birth, enrollment date, current grade level, and academic status (active/inactive)",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-7",
+      "summary": "Create course data structure in backend to store course ID, course name, course code, description, credit hours, and assigned professor name",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-8",
+      "summary": "Implement backend functions to create, read, update, and delete student profiles",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-9",
+      "summary": "Implement backend functions to create, read, update, and delete courses",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-10",
+      "summary": "Create enrollment data structure in backend to link students to courses, storing enrollment ID, student ID, course ID, enrollment date, and current grade (optional until assigned)",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-11",
+      "summary": "Implement backend functions to enroll students in courses, retrieve enrollments by student or course, update grades, and remove enrollments",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "status": "pending"
+    }
+  ],
+  "projectName": "LORDSON Edu",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

@@ -1,0 +1,233 @@
+{
+  "kind": "build_request",
+  "title": "Build simplified LORDSON Edu foundation with student profiles and course management",
+  "projectName": "LORDSON Edu",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Create student profile data structure in backend to store student ID, full name, date of birth, enrollment date, current grade level, and academic status (active/inactive)",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-1",
+          "msg-4"
+        ],
+        "quotes": [
+          "student profiles with academic records",
+          "focusing on just student profiles"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Backend stores student profiles with all specified fields",
+        "Student ID is unique and auto-generated",
+        "Academic status defaults to 'active' on creation"
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Create course data structure in backend to store course ID, course name, course code, description, credit hours, and assigned professor name",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-1",
+          "msg-4"
+        ],
+        "quotes": [
+          "course management",
+          "focusing on just student profiles and course management"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Backend stores courses with all specified fields",
+        "Course ID is unique and auto-generated",
+        "Course code is required and must be unique"
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "text": "Implement backend functions to create, read, update, and delete student profiles",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-1",
+          "msg-4"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Can create new student profiles",
+        "Can retrieve single student by ID and list all students",
+        "Can update student information",
+        "Can delete student profiles"
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "text": "Implement backend functions to create, read, update, and delete courses",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-1",
+          "msg-4"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Can create new courses",
+        "Can retrieve single course by ID and list all courses",
+        "Can update course information",
+        "Can delete courses"
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "text": "Create enrollment data structure in backend to link students to courses, storing enrollment ID, student ID, course ID, enrollment date, and current grade (optional until assigned)",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-1",
+          "msg-4"
+        ],
+        "quotes": [
+          "student profiles with academic records",
+          "course management with assignments and grades"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Backend stores enrollments linking students to courses",
+        "One student can enroll in multiple courses",
+        "Grade field is optional and can be updated later",
+        "Can query enrollments by student ID or course ID"
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "text": "Implement backend functions to enroll students in courses, retrieve enrollments by student or course, update grades, and remove enrollments",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-1",
+          "msg-4"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Can create new enrollments",
+        "Can retrieve all enrollments for a specific student",
+        "Can retrieve all enrollments for a specific course",
+        "Can update grades for enrollments",
+        "Can delete enrollments"
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "text": "Build frontend student management interface with a list view of all students showing name, ID, grade level, and status, with ability to add new students via a form",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1",
+          "msg-4"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Displays table of students with key information",
+        "Includes button to open 'Add Student' form",
+        "Form collects all required student fields",
+        "Successfully creates student and updates list view"
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "text": "Build frontend course management interface with a list view of all courses showing course name, code, credits, and professor, with ability to add new courses via a form",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1",
+          "msg-4"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Displays table of courses with key information",
+        "Includes button to open 'Add Course' form",
+        "Form collects all required course fields",
+        "Successfully creates course and updates list view"
+      ]
+    },
+    {
+      "id": "REQ-9",
+      "text": "Build frontend student detail view that shows full student information and lists all courses the student is enrolled in with current grades",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1",
+          "msg-4"
+        ],
+        "quotes": [
+          "student profiles with academic records"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Clicking a student from the list opens detail view",
+        "Shows all student profile fields",
+        "Displays enrolled courses with grades",
+        "Shows placeholder when no grades assigned yet"
+      ]
+    },
+    {
+      "id": "REQ-10",
+      "text": "Build frontend enrollment interface to assign students to courses from either student detail view or course detail view",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1",
+          "msg-4"
+        ],
+        "quotes": [
+          "course management"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Can select student and course to create enrollment",
+        "Prevents duplicate enrollments",
+        "Shows confirmation when enrollment succeeds",
+        "Updates relevant views to show new enrollment"
+      ]
+    },
+    {
+      "id": "REQ-11",
+      "text": "Create a creative, cohesive visual design theme for the education platform with professional styling appropriate for school administrators and educators, using warm, trustworthy colors and clear typography that ensures readability across dashboards and forms",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ]
+      },
+      "acceptanceCriteria": [
+        "All pages follow consistent color palette",
+        "Typography hierarchy is clear and professional",
+        "Layout patterns are consistent across views",
+        "Design feels appropriate for education context"
+      ]
+    }
+  ],
+  "constraints": [
+    "Use Internet Identity for authentication, not custom username/password system",
+    "Backend must use single-actor architecture in main.mo",
+    "Do not implement real-time messaging features",
+    "Do not create mobile apps for App Store or Google Play"
+  ],
+  "nonGoals": [
+    "Multi-language support (English, French, Haitian Creole) - deferred to future iteration",
+    "Role-based dashboards for administrators, directors, professors - deferred to future iteration",
+    "Financial tracking - deferred to future iteration",
+    "Staff directories - deferred to future iteration",
+    "Assignment management - deferred to future iteration",
+    "Multi-tenant school separation - deferred to future iteration"
+  ],
+  "imageRequirements": {
+    "required": [
+      "Modern education platform hero banner showing diverse students collaborating (hero-banner.dim_1200x400.png)",
+      "Simple graduation cap icon for student profiles (graduation-cap.dim_64x64.png)",
+      "Open book icon for course management (book-icon.dim_64x64.png)"
+    ],
+    "edits": []
+  }
+}

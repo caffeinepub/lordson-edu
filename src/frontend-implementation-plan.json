@@ -1,0 +1,202 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Frontend Implementation Plan for LORDSON Edu Foundation",
+  "requirements": [
+    {
+      "id": "REQ-7",
+      "summary": "Build student management interface with list view and add student form",
+      "acceptanceCriteria": [
+        "Displays table of students with key information",
+        "Includes button to open 'Add Student' form",
+        "Form collects all required student fields",
+        "Successfully creates student and updates list view"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/hooks/useStudents.ts",
+          "operation": "create",
+          "description": "Create React Query hooks for fetching all students, creating students, updating students, and deleting students. Use the authorization component to ensure users are authenticated before making backend calls. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/StudentList.tsx",
+          "operation": "create",
+          "description": "Create student list component displaying a table with columns for name, ID, grade level, and status. Include an 'Add Student' button that opens the add student dialog. Wire generated image frontend/public/assets/generated/graduation-cap.dim_64x64.png as a decorative icon in the header."
+        },
+        {
+          "path": "frontend/src/components/AddStudentDialog.tsx",
+          "operation": "create",
+          "description": "Create a dialog component with a form to collect student information: full name, date of birth, grade level. Use shadcn/ui Dialog and Form components. On submit, call the create student mutation from useStudents hook."
+        },
+        {
+          "path": "frontend/src/pages/StudentsPage.tsx",
+          "operation": "create",
+          "description": "Create students page that renders the StudentList component. Handle loading and error states from the students query."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add route for /students path pointing to StudentsPage component. Add navigation link in the main navigation."
+        }
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "summary": "Build course management interface with list view and add course form",
+      "acceptanceCriteria": [
+        "Displays table of courses with key information",
+        "Includes button to open 'Add Course' form",
+        "Form collects all required course fields",
+        "Successfully creates course and updates list view"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/hooks/useCourses.ts",
+          "operation": "create",
+          "description": "Create React Query hooks for fetching all courses, creating courses, updating courses, and deleting courses. Use the authorization component to ensure users are authenticated before making backend calls. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/CourseList.tsx",
+          "operation": "create",
+          "description": "Create course list component displaying a table with columns for course name, code, credits, and professor. Include an 'Add Course' button that opens the add course dialog. Wire generated image frontend/public/assets/generated/book-icon.dim_64x64.png as a decorative icon in the header."
+        },
+        {
+          "path": "frontend/src/components/AddCourseDialog.tsx",
+          "operation": "create",
+          "description": "Create a dialog component with a form to collect course information: course name, course code, description, credit hours, and professor name. Use shadcn/ui Dialog and Form components. On submit, call the create course mutation from useCourses hook."
+        },
+        {
+          "path": "frontend/src/pages/CoursesPage.tsx",
+          "operation": "create",
+          "description": "Create courses page that renders the CourseList component. Handle loading and error states from the courses query."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add route for /courses path pointing to CoursesPage component. Add navigation link in the main navigation."
+        }
+      ]
+    },
+    {
+      "id": "REQ-9",
+      "summary": "Build student detail view showing full profile and enrolled courses with grades",
+      "acceptanceCriteria": [
+        "Clicking a student from the list opens detail view",
+        "Shows all student profile fields",
+        "Displays enrolled courses with grades",
+        "Shows placeholder when no grades assigned yet"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/hooks/useEnrollments.ts",
+          "operation": "create",
+          "description": "Create React Query hooks for fetching enrollments by student ID, enrollments by course ID, creating enrollments, updating grades, and removing enrollments. Use the authorization component to ensure users are authenticated before making backend calls. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/StudentDetailView.tsx",
+          "operation": "create",
+          "description": "Create student detail component that displays full student profile information and a table of enrolled courses with current grades. Use enrollments hook to fetch student's courses. Show 'Not yet graded' placeholder when grade is empty."
+        },
+        {
+          "path": "frontend/src/pages/StudentDetailPage.tsx",
+          "operation": "create",
+          "description": "Create student detail page that uses studentId from URL params. Fetch student data using useStudents hook and render StudentDetailView component. Handle loading and error states."
+        },
+        {
+          "path": "frontend/src/components/StudentList.tsx",
+          "operation": "modify",
+          "description": "Make each student row clickable, navigating to /students/:studentId route when clicked."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add route for /students/:studentId path pointing to StudentDetailPage component."
+        }
+      ]
+    },
+    {
+      "id": "REQ-10",
+      "summary": "Build enrollment interface to assign students to courses",
+      "acceptanceCriteria": [
+        "Can select student and course to create enrollment",
+        "Prevents duplicate enrollments",
+        "Shows confirmation when enrollment succeeds",
+        "Updates relevant views to show new enrollment"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/EnrollStudentDialog.tsx",
+          "operation": "create",
+          "description": "Create enrollment dialog component with dropdowns to select student and course. Validate that the combination doesn't already exist before submitting. Use React Query mutation from useEnrollments hook. Show success toast on completion."
+        },
+        {
+          "path": "frontend/src/components/StudentDetailView.tsx",
+          "operation": "modify",
+          "description": "Add 'Enroll in Course' button that opens EnrollStudentDialog with the current student pre-selected."
+        },
+        {
+          "path": "frontend/src/pages/CourseDetailPage.tsx",
+          "operation": "create",
+          "description": "Create course detail page displaying full course information and list of enrolled students with grades. Include 'Enroll Student' button that opens EnrollStudentDialog with the current course pre-selected."
+        },
+        {
+          "path": "frontend/src/components/CourseList.tsx",
+          "operation": "modify",
+          "description": "Make each course row clickable, navigating to /courses/:courseId route when clicked."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add route for /courses/:courseId path pointing to CourseDetailPage component."
+        }
+      ]
+    },
+    {
+      "id": "REQ-11",
+      "summary": "Create cohesive visual design theme for education platform with professional styling",
+      "acceptanceCriteria": [
+        "All pages follow consistent color palette",
+        "Typography hierarchy is clear and professional",
+        "Layout patterns are consistent across views",
+        "Design feels appropriate for education context"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Define warm, trustworthy color palette using CSS custom properties. Set up typography scale with clear hierarchy. Use warm blues, soft oranges, and neutral grays appropriate for educational context. Ensure good contrast and readability."
+        },
+        {
+          "path": "frontend/tailwind.config.js",
+          "operation": "modify",
+          "description": "Extend Tailwind theme with custom education-themed colors (primary, secondary, accent) and typography settings. Configure consistent spacing and border radius values."
+        },
+        {
+          "path": "frontend/src/components/Layout.tsx",
+          "operation": "create",
+          "description": "Create main layout component with consistent header, navigation, and content area. Include the generated hero banner image frontend/public/assets/generated/hero-banner.dim_1200x400.png as a decorative element in the header. Apply consistent padding and max-width constraints."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Wrap all routes with the Layout component to ensure consistent design across all pages."
+        },
+        {
+          "path": "frontend/src/components/LoginButton.tsx",
+          "operation": "create",
+          "description": "Create login button component following authorization component usage instructions. Use consistent styling from the education theme. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/ProfileSetupDialog.tsx",
+          "operation": "create",
+          "description": "Create profile setup dialog that prompts new users for their name on first login. Follow authorization component usage instructions for profile management. Use shadcn/ui Dialog component with education theme styling. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/Layout.tsx",
+          "operation": "modify",
+          "description": "Integrate LoginButton in the header and conditionally render ProfileSetupDialog following authorization component's pattern for preventing modal flash. Use the authorization component to check authentication state. Verify the component's usage instructions before implementing."
+        }
+      ]
+    }
+  ]
+}

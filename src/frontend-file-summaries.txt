@@ -1,0 +1,20 @@
+{
+  "frontend/src/App.tsx": "Main application component with TanStack Router setup, theme provider, and route definitions for all pages including home, students, courses, and detail views.",
+  "frontend/src/hooks/useQueries.ts": "React Query hooks for all backend operations including student management, course management, enrollment operations, and user profile management with proper cache invalidation.",
+  "frontend/src/components/Layout.tsx": "Main layout component with responsive header navigation, login button, mobile menu, footer with attribution, and profile setup dialog integration.",
+  "frontend/src/components/LoginButton.tsx": "Authentication button component that handles Internet Identity login/logout with loading states and proper error handling.",
+  "frontend/src/components/ProfileSetupDialog.tsx": "Modal dialog for first-time user profile setup that prompts authenticated users to enter their name.",
+  "frontend/src/components/StudentList.tsx": "Student list component displaying a table of all students with add student functionality and click-to-view-details navigation, now correctly using StudentStatus enum for badge comparison.",
+  "frontend/src/components/AddStudentDialog.tsx": "Dialog form for creating new student profiles with fields for name, date of birth, and grade level, now correctly using StudentStatus enum.",
+  "frontend/src/components/CourseList.tsx": "Course list component displaying a table of all courses with add course functionality and click-to-view-details navigation.",
+  "frontend/src/components/AddCourseDialog.tsx": "Dialog form for creating new courses with fields for course name, code, description, credit hours, and professor.",
+  "frontend/src/components/StudentDetailView.tsx": "Detailed student profile view showing personal information and enrolled courses with grades, includes enroll button, now correctly using StudentStatus enum for badge comparison.",
+  "frontend/src/components/EnrollStudentDialog.tsx": "Dialog for enrolling students in courses with duplicate enrollment prevention and support for pre-selected student or course.",
+  "frontend/src/pages/HomePage.tsx": "Landing page with hero section, feature cards for students and courses, and key features overview with authentication-aware content.",
+  "frontend/src/pages/StudentsPage.tsx": "Students page wrapper that checks authentication and renders the StudentList component.",
+  "frontend/src/pages/StudentDetailPage.tsx": "Student detail page that fetches and displays individual student information using the StudentDetailView component.",
+  "frontend/src/pages/CoursesPage.tsx": "Courses page wrapper that checks authentication and renders the CourseList component.",
+  "frontend/src/pages/CourseDetailPage.tsx": "Course detail page showing course information and enrolled students with enrollment functionality.",
+  "frontend/src/index.css": "Global styles with warm, trustworthy education-themed OKLCH color system for both light and dark modes using deep blues and soft oranges.",
+  "frontend/tailwind.config.js": "Tailwind configuration with education-themed color tokens, custom font family, and extended design system for professional educational platform styling."
+}
